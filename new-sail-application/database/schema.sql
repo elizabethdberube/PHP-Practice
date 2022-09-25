@@ -41,18 +41,18 @@ REFERENCES categories(id)
 ON DELETE SET NULL
 );
 
-DROP TABLE IF EXISTS issue_books;
-CREATE TABLE issue_books (
+DROP TABLE IF EXISTS  book_checkouts;
+CREATE TABLE  book_checkouts (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NULL,
 book_id INT NULL,
-issue_date_time DATETIME,
+checkout_date_time DATETIME,
 expected_return_date INT NULL,
 return_date_time DATETIME,
 book_fines INT NULL,
 book_issue_status enum('Issue','Return','Not Return'),
-FOREIGN KEY (issue_book_id)
-REFERENCES issue_books(id)
+FOREIGN KEY ( book_checkout_id)
+REFERENCES  book_checkouts(id)
 ON DELETE SET NULL
 );
 
