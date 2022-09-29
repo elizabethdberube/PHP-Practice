@@ -1,10 +1,16 @@
 # PHP-Practice
 
-# setup
-### add alias to .bashrc file
+## setup
+add alias to .bashrc file
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
-### add bootstrap
-sail composer require laravel/ui
+compose install
 
-sail php artisan ui bootstrap --auth
+sail up 
+
+npm i && npm run dev
+
+## start application
+
+sail up
+npm run dev
