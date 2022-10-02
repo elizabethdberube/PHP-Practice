@@ -1,6 +1,12 @@
 @extends('layouts.app')
+@section('content')
 
-
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Programming</a></li>
+  <li><a class="dropdown-item" href="#">Database</a></li>
+  <li><a class="dropdown-item" href="#">Web Design</a></li>
+  <li><a class="dropdown-item" href="#">Web Development</a></li>
+</ul>
 
 
 <table class="table table-striped table-hover">
@@ -34,6 +40,5 @@
 </table>
 
 
-
-
+@endsection
 
