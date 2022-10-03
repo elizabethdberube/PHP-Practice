@@ -1,13 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-<ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Programming</a></li>
-  <li><a class="dropdown-item" href="#">Database</a></li>
-  <li><a class="dropdown-item" href="#">Web Design</a></li>
-  <li><a class="dropdown-item" href="#">Web Development</a></li>
-</ul>
 
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+  Programming
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">Database</a>
+  <a href="#" class="list-group-item list-group-item-action">Web Design</a>
+  <a href="#" class="list-group-item list-group-item-action">Web Development</a>
+</div>
 
 <table class="table table-striped table-hover">
   <thead>

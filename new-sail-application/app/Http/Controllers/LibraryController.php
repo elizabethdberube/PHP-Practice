@@ -23,6 +23,15 @@ class LibraryController extends Controller
      */
     public function library()
     {
+      
         return view('library');
+    }
+
+    public function libraryCategory()
+    {
+      $categories = Category::get();
+      $books = Book::get();
+      
+        return view('library/category', array('categories' => $categories, 'books' => $books));
     }
 }

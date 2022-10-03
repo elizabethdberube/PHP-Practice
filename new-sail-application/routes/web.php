@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Auth::routes();
+Auth::routes();
 
 
 Route::get('/library', [App\Http\Controllers\LibraryController::class, 'library'])->name('library');
+Route::get('/library/category', [App\Http\Controllers\LibraryController::class, 'libraryCategory'])->name('library');
+
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
 
