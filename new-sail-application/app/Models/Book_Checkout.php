@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 //not sure about this
-use Illuminate\Foundation\Auth\Admin as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\User;
 use App\Models\Book;
 
-class Category extends Authenticatable
+class Category extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 

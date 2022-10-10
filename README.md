@@ -15,6 +15,10 @@ sail up
 
 npm i && npm run dev
 
+after sourcing schema and running seeds
+
+sail artisan migrate
+
 ## start application
 
 sail up
@@ -23,3 +27,9 @@ npm run dev
 ## if not using alias
 ./vendor/bin/sail up
 npm run dev
+
+## troubleshooting
+if migration doesn't complete
+php artisan migrate:fresh
+then run again 
+
