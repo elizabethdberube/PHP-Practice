@@ -11,13 +11,14 @@
   <a href="#" class="list-group-item list-group-item-action">Web Development</a>
 </div>
 
+
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Author</th>
+      <th scope="col">Name</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>

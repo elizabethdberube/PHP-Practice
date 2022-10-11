@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Book;
 
 class LibraryController extends Controller
 {
@@ -23,8 +25,10 @@ class LibraryController extends Controller
      */
     public function library()
     {
-      
-        return view('library');
+      $categories = Category::get();
+      $books = Book::get();
+
+        return view('library', array('categories' => $categories, 'books' => $books));
     }
 
     public function libraryCategory()
