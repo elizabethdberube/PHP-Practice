@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
+Route::get('/user', [UserController::class, 'index']);
 Route::get('/library', [App\Http\Controllers\LibraryController::class, 'library'])->name('library');
-Route::get('/library/category', [App\Http\Controllers\LibraryController::class, 'libraryCategory'])->name('library');
+Route::get('/library/category/{id}', [App\Http\Controllers\LibraryController::class, 'libraryCategory'] );
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 

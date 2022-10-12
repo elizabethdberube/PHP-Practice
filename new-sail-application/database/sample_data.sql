@@ -12,10 +12,10 @@ VALUES ("Programming", "Enable",  "2022-09-22", "2022-09-23"),
        ("Web Development", "Enable",  "2022-09-22", "2022-09-23");
 
 INSERT INTO books (category_id, book_author, book_name, book_isbn, book_no_of_copies, book_status, book_added_on, book_updated_on)
-VALUES (001, "Alan Forbes", "The Joy of PHP Programming", "978152279214", 4, "Available", "2022-09-22", "2022-09-23" ),
-       (002, "Laura Thompson", "PHP and MySQL Web Development", "753951852123",  3, "Available", "2022-09-22", "2022-09-23" ),
-       (004, "Mark Myers", "A Smarter Way to Learn JavaScript", "852369753951",  5, "Available", "2022-09-22", "2022-09-23" ),
-       (003, "Jennifer Robbins", "Learning Web Design: A Beginners Guide", "1449319270", 4, "Available", "2022-09-22", "2022-09-23" );
+VALUES (1, "Alan Forbes", "The Joy of PHP Programming", "978152279214", 4, "Available", "2022-09-22", "2022-09-23" ),
+       (2, "Laura Thompson", "PHP and MySQL Web Development", "753951852123",  3, "Available", "2022-09-22", "2022-09-23" ),
+       (4, "Mark Myers", "A Smarter Way to Learn JavaScript", "852369753951",  5, "Available", "2022-09-22", "2022-09-23" ),
+       (3, "Jennifer Robbins", "Learning Web Design: A Beginners Guide", "1449319270", 4, "Available", "2022-09-22", "2022-09-23" );
    
 
 
