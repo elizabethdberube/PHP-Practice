@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Book;
+use App\Models\User;
 
 class LibraryController extends Controller
 {
@@ -32,18 +33,24 @@ class LibraryController extends Controller
         return view('library', array('categories' => $categories, 'books' => $books));
     }
 
-    public function libraryCategory($id)
+    public function libraryCategory($category_id)
    {
-       return view('categories', [
-           'categories' => Category::get($id)
-       ]);
-    // {
-    //   $categories = Category::get();
-    //   $books = Book::get();
-      
-    //     return view('library/category', array('categories' => $categories, 'books' => $books));
-    // }
+    $books = Book::get($category_id);
+
+  
+
+       return view('categories', array( 'books' => $books));
+ 
    }
+  //  public function selectBook($id)
+  //  {
+
+  //   $user = User::get($id);
+  //   $books = Book::get($id);
+
+  //      return view('categories', array('category' => $category, ));
+    
+  //  }
 
 
   }

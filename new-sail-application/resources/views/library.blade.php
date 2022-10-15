@@ -11,7 +11,7 @@
   <a href="/library/category/4" class="list-group-it list-group-item-action">Web Development</a>
 </div>
 
-
+<form action="insert.php" method="post">
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -22,26 +22,35 @@
     </tr>
   </thead>
   <tbody>
+  <?php
+
+foreach ($books as $book) {
+  echo "
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>{$book['book_author']}</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>{$book['book_name']}</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+   
+      <td>{$book['book_isbn']}<br/></td>
+    
     </tr>
+    <tr>
+   
+    <td>{$book['book_isbn']}<br/>
+    
+    </td>
+  
+  </tr>
+    ";
+
+  }
+  ?>
   </tbody>
 </table>
-
+</form>
 
 @endsection
 
