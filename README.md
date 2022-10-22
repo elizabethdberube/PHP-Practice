@@ -44,3 +44,7 @@ then run again
  
  ` php artisan model:show <name of model>`
 
+ ## view routes
+
+ ` php artisan route:list `
+

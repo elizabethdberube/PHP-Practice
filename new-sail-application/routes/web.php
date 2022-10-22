@@ -21,7 +21,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
+Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show']);
+Route::get('/admin/{id}', [App\Http\Controllers\AdminController::class, 'showAdmin']);
 Route::get('/library', [App\Http\Controllers\LibraryController::class, 'library'])->name('library');
 Route::get('/library/category/{category_id}', [App\Http\Controllers\LibraryController::class, 'libraryCategory'] );
 

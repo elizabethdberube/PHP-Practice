@@ -21,10 +21,10 @@ class UserController extends Controller
     {
       //  $this->middleware('auth');
     }
-    public function show($id)
+    public function showAdmin($id)
     {
-        return view('Admin.profile', [
-            'Admin' => User::findOrFail($id)
+        return view('admin.profile', [
+            'admin' => Admin::findOrFail($id)
         ]);
     }
 }

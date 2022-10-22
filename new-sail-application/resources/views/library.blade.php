@@ -11,7 +11,11 @@
   <a href="/library/category/4" class="list-group-item list-group-item-action">Web Development</a>
 </div>
 
-<form action="insert.php" method="post">
+
+  
+  <?php
+// if ($books == true) { ?>
+  <form action="insert.php" method="post">
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -22,8 +26,7 @@
     </tr>
   </thead>
   <tbody>
-  <?php
-
+    <?php
 foreach ($books as $book) {
   echo "
     <tr>
@@ -47,10 +50,12 @@ foreach ($books as $book) {
     ";
 
   }
-  ?>
+?>
   </tbody>
 </table>
 </form>
-
+<?php
+// }
+?>
 @endsection
 

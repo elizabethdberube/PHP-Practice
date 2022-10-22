@@ -35,11 +35,12 @@ class LibraryController extends Controller
 
     public function libraryCategory($category_id)
    {
-    $books = Book::get($category_id);
+
+    $books = Book::find($category_id);
 
   
 
-       return view('categories', array( 'books' => $books));
+       return view('library', array( 'books' => $books));
  
    }
   //  public function selectBook($id)
