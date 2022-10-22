@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\User;
 use App\Models\Book;
 
-class Category extends Model
+class Book_Checkout extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,7 +19,7 @@ class Category extends Model
      *
      * @var array<int, string>
      */
-    protected $Category = [
+    protected $Book_Checkout = [
         'id',
         'user_id',
         'book_id',

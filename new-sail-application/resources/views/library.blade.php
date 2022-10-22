@@ -8,7 +8,7 @@
   </a>
   <a href="/library/category/2" class="list-group-item list-group-item-action">Database</a>
   <a href="/library/category/3" class="list-group-item list-group-item-action">Web Design</a>
-  <a href="/library/category/4" class="list-group-it list-group-item-action">Web Development</a>
+  <a href="/library/category/4" class="list-group-item list-group-item-action">Web Development</a>
 </div>
 
 <form action="insert.php" method="post">
