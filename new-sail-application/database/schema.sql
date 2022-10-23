@@ -7,17 +7,9 @@ USE book_db;
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-user_email TEXT NULL,
-user_password TEXT NULL
+email TEXT NULL,
+password TEXT NULL
 );
-
-DROP TABLE IF EXISTS admins;
-CREATE TABLE admins (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-admin_email TEXT NULL,
-admin_password TEXT NULL
-);
-
 
 DROP TABLE IF EXISTS categories;
 CREATE TABLE categories (
