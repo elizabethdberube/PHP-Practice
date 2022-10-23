@@ -3,18 +3,19 @@
 
 
 <div class="list-group">
-  <a href="/library/category/1" class="list-group-item list-group-item-action active" aria-current="true">
+  <a href="/library/1/books" class="list-group-item list-group-item-action active" aria-current="true">
   Programming
   </a>
-  <a href="/library/category/2" class="list-group-item list-group-item-action">Database</a>
-  <a href="/library/category/3" class="list-group-item list-group-item-action">Web Design</a>
-  <a href="/library/category/4" class="list-group-item list-group-item-action">Web Development</a>
+  <a href="/library/2/books" class="list-group-item list-group-item-action">Database</a>
+  <a href="/library/3/books" class="list-group-item list-group-item-action">Web Design</a>
+  <a href="/library/4/books" class="list-group-item list-group-item-action">Web Development</a>
 </div>
 
 
   
   <?php
-// if ($books == true) { ?>
+// if ($books == true) { 
+?>
   <form action="insert.php" method="post">
 <table class="table table-striped table-hover">
   <thead>
@@ -27,6 +28,7 @@
   </thead>
   <tbody>
     <?php
+
 foreach ($books as $book) {
   echo "
     <tr>

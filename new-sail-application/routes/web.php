@@ -24,9 +24,9 @@ Auth::routes();
 Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'show']);
 Route::get('/admin/{id}', [App\Http\Controllers\AdminController::class, 'showAdmin']);
 Route::get('/library', [App\Http\Controllers\LibraryController::class, 'library'])->name('library');
-Route::get('/library/category/{category_id}', [App\Http\Controllers\LibraryController::class, 'libraryCategory'] );
+Route::get('/library/{category_id}/books', [App\Http\Controllers\LibraryController::class, 'libraryCategory'] );
 
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard/user/{id}', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
 
 
