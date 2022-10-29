@@ -40,7 +40,7 @@ class LibraryController extends Controller
 
   
 
-       return view('library', array( 'books' => $books));
+       return view("library", array( 'books' => $books));
  
    }
   //  public function selectBook($id)
