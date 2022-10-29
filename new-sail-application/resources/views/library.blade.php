@@ -3,12 +3,12 @@
 
 
 <div class="list-group">
-  <a href="/library/1/books" class="list-group-item list-group-item-action active" aria-current="true">
+  <a href="/library/1/" class="list-group-item list-group-item-action active" aria-current="true">
   Programming
   </a>
-  <a href="/library/2/books" class="list-group-item list-group-item-action">Database</a>
-  <a href="/library/3/books" class="list-group-item list-group-item-action">Web Design</a>
-  <a href="/library/4/books" class="list-group-item list-group-item-action">Web Development</a>
+  <a href="/library/2" class="list-group-item list-group-item-action">Database</a>
+  <a href="/library/3" class="list-group-item list-group-item-action">Web Design</a>
+  <a href="/library/4" class="list-group-item list-group-item-action">Web Development</a>
 </div>
 
 

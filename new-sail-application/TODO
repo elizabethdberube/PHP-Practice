@@ -1,8 +1,8 @@
 1. Add modal so user can select book.
 2. Not sure if I'm using the correct form of interpolation...needs testing.
 3. Finish form. Needs submit button, route and more added to the controller.
-4. Finish user sign in.
-5. Finish Admin sign in. Done. 
+4. Finish user sign in. Done. 
+5. Finish Admin sign in. 
 6. User dashboard.
 7. Admin dashboard.
 8. Need to work on book status set to available or unavailable. 
