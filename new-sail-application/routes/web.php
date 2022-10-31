@@ -29,6 +29,12 @@ Route::get('/library/{category_id}', [App\Http\Controllers\LibraryController::cl
 
 Route::get('/dashboard/user/{id}', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
+Route::get('/about', [App\Http\Controllers\LibraryController::class, 'about'])->name('about');
+
+Route::get('/contact', [App\Http\Controllers\LibraryController::class, 'contact'])->name('contact');
+
+Route::get('/settings', [App\Http\Controllers\LibraryController::class, 'settings'])->name('settings');
+
 
 
 
