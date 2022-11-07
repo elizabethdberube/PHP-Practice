@@ -26,11 +26,12 @@ class DashboardController extends Controller
      */
     public function dashboard()
     {
-      $categories = Category::get();
-      $books = Book::get();
-      $book_checkouts = Book_Checkout::get();
+      // $categories = Category::get();
+      // $books = Book::get();
+      // $book_checkouts = Book_Checkout::get();
 
 
-        return view('dashboard', array('categories' => $categories, 'books' => $books, 'book_checkouts' => $book_checkouts));
+   //     return view('dashboard', array('categories' => $categories, 'books' => $books, 'book_checkouts' => $book_checkouts));
+   return view('dashboard');
     }
 }

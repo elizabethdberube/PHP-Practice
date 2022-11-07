@@ -14,7 +14,7 @@
 
   
   <?php
-// if ($books == true) { 
+if (isset($books)) { 
 ?>
   <form action="insert.php" method="post">
 <table class="table table-striped table-hover">
@@ -28,7 +28,6 @@
   </thead>
   <tbody>
     <?php
-
 foreach ($books as $book) {
   echo "
     <tr>
@@ -57,7 +56,9 @@ foreach ($books as $book) {
 </table>
 </form>
 <?php
-// }
+ } else {
+  
+ }
 ?>
 @endsection
 

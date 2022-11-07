@@ -34,7 +34,7 @@ and then restart your shell.
 ## troubleshooting
 if migration doesn't complete run
 
-` php artisan migrate:fresh `
+` sail artisan migrate:fresh `
 
 then run again 
 
@@ -42,9 +42,10 @@ then run again
  
  to inspect individuals models run
  
- ` php artisan model:show <name of model>`
+ ` sail artisan model:show <name of model>`
 
  ## view routes
 
- ` php artisan route:list `
+ ` sail artisan route:list `
+
 

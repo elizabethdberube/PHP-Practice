@@ -1,6 +1,6 @@
-INSERT INTO users (email, password)
-VALUES ("fakeuser@gmail.com", "areallygreatpassword"),
-      ("admin@librarystop.com", "areallygreatpassword");
+INSERT INTO users (name, email, password)
+VALUES ("liz", "fakeuser@gmail.com", "areallygreatpassword"),
+      ("elizabeth", "admin@librarystop.com", "areallygreatpassword");
        
 INSERT INTO categories (category_name, category_status, category_created_on, category_updated_on)
 VALUES ("Programming", "Enable",  "2022-09-22", "2022-09-23"),

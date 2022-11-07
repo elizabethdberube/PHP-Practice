@@ -25,9 +25,11 @@ Auth::routes();
 
 
 Route::get('/library', [App\Http\Controllers\LibraryController::class, 'library'])->name('library');
-Route::get('/library/{category_id}', [App\Http\Controllers\LibraryController::class, 'libraryCategory'])->name('library');
+Route::get('/library/{category_id}', [App\Http\Controllers\LibraryController::class, 'libraryCategory'])->name('libraryCategory');
 
-Route::get('/dashboard/user/{id}', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
+
+// Route::get('/dashboard/user/{id}', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/about', [App\Http\Controllers\LibraryController::class, 'about'])->name('about');
 
