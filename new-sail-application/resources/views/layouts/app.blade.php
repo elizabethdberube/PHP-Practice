@@ -25,7 +25,32 @@
 
     </head>
     <body class="antialiased">
+    @if (Route::has('login'))
+               
+               @auth
+               <nav class="navbar navbar-expand-lg bg-light">
+                
+<div class="container-fluid">
+<a class="navbar-brand" href="/home">Home</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+ <ul class="navbar-nav">
+   <li class="nav-item">
+     <a class="nav-link active" aria-current="page" href="/library">Library</a>
+   </li>
+   <li class="nav-item">
+     <a class="nav-link" href="/logout">Logout</a>
+   </li>
+ 
+ </ul>
+</div>
+</div>
+</nav>
+               @endauth
         
+       @endif
         <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -41,6 +66,7 @@
                 </div>
             @endif
         </div> -->
+
         @yield('content')
      
     </body>

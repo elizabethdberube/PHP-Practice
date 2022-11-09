@@ -10,6 +10,7 @@ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name TEXT NULL,
 email TEXT NULL,
 password TEXT NULL
+
 );
 
 DROP TABLE IF EXISTS categories;
@@ -19,6 +20,7 @@ category_name TEXT NULL,
 category_status enum ('Enable', 'Disable'),
 category_created_on DATE,
 category_updated_on DATE
+   
 );
 
 DROP TABLE IF EXISTS books;
@@ -44,7 +46,7 @@ user_id INT NULL,
 book_id INT NULL,
 checkout_date DATE,
 expected_return_date DATE NULL,
-return_date DATE,
+return_date DATE NULL,
 book_fines INT NULL,
 book_issue_status enum('Issue','Return','Not Return'),
 FOREIGN KEY ( book_id)

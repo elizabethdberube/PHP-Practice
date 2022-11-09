@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
+use App\Models\User;
+use App\Models\Book_Checkout;
 
 class HomeController extends Controller
 {
@@ -13,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+      $this->middleware('auth');
     }
 
     /**
@@ -21,8 +24,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function dashboard()
     {
-        return view('home');
+      // $categories = Category::get();
+      // $books = Book::get();
+      // $book_checkouts = Book_Checkout::get();
+
+
+   //     return view('dashboard', array('categories' => $categories, 'books' => $books, 'book_checkouts' => $book_checkouts));
+   return view('dashboard');
     }
 }

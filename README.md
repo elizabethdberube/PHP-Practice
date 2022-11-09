@@ -48,4 +48,10 @@ then run again
 
  ` sail artisan route:list `
 
+ ## login
+ user:
+ fakeuser@gmail.com
+ password:
+ password
+
 

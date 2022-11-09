@@ -16,7 +16,7 @@ use App\Http\Controllers\LibraryController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('main');
 });
 
 
@@ -27,7 +27,7 @@ Auth::routes();
 Route::get('/library', [App\Http\Controllers\LibraryController::class, 'library'])->name('library');
 Route::get('/library/{category_id}', [App\Http\Controllers\LibraryController::class, 'libraryCategory'])->name('libraryCategory');
 
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 
 // Route::get('/dashboard/user/{id}', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 

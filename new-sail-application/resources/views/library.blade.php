@@ -27,31 +27,28 @@ if (isset($books)) {
     </tr>
   </thead>
   <tbody>
+    <tr>
     <?php
 foreach ($books as $book) {
   echo "
-    <tr>
+  
       <td>{$book['book_author']}</td>
-    </tr>
-    <tr>
+ 
       <td>{$book['book_name']}</td>
-    </tr>
-    <tr>
+
    
       <td>{$book['book_isbn']}<br/></td>
     
-    </tr>
-    <tr>
-   
-    <td>{$book['book_isbn']}<br/>
-    
-    </td>
+
+    <td>{$book['book_status']}<br/>
   
-  </tr>
+  
+  
     ";
 
   }
 ?>
+</tr>
   </tbody>
 </table>
 </form>
