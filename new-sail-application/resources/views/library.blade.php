@@ -36,16 +36,13 @@ foreach ($books as $book) {
  
       <td>{$book['book_name']}</td>
 
-   
       <td>{$book['book_isbn']}<br/></td>
+  
+      <td>{$book['book_status']} <a class=\"btn btn-primary ml-4\" href=\"/checkout/{$book['id']}\">Check this book out</a></td>
+
     
 
-    <td>{$book['book_status']}<br/>
-  
-  
-  
     ";
-
   }
 ?>
 </tr>

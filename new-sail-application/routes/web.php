@@ -31,6 +31,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->
 
 // Route::get('/dashboard/user/{id}', [App\Http\Controllers\DashboardController::class, 'dashboard'])->name('dashboard');
 
+Route::get('/checkout/{id}', [App\Http\Controllers\CheckoutController::class, 'checkout'])->name('checkout');
+
 Route::get('/about', [App\Http\Controllers\LibraryController::class, 'about'])->name('about');
 
 Route::get('/contact', [App\Http\Controllers\LibraryController::class, 'contact'])->name('contact');
