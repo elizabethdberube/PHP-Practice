@@ -28,10 +28,11 @@ class HomeController extends Controller
     {
       // $categories = Category::get();
       // $books = Book::get();
-      // $book_checkouts = Book_Checkout::get();
+      $id = auth()->id();
+      $userId= User::find($id);
 
 
    //     return view('dashboard', array('categories' => $categories, 'books' => $books, 'book_checkouts' => $book_checkouts));
-   return view('dashboard');
+   return view('dashboard', array('user' => $userId));
     }
 }
