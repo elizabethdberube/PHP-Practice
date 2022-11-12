@@ -66,8 +66,21 @@
                 </div>
             @endif
         </div> -->
+   
 
         @yield('content')
      
+        @if (Route::has('login'))
+               
+               @auth
+        <footer class="footer">
+            <a href="/settings">Settings</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            
+        </footer>
+        @endauth
+        
+        @endif
     </body>
 </html>

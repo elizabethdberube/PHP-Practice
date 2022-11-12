@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class SettingsController extends Controller
 {
@@ -23,6 +24,9 @@ class SettingsController extends Controller
      */
     public function settings()
     {
-        return view('settings');
+        $userId = auth()->id();
+        $user= User::find($userId);
+
+        return view('settings', array('user' => $user));
     }
 }

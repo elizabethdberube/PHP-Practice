@@ -33,11 +33,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->
 
 Route::get('/checkout/{id}', [App\Http\Controllers\CheckoutController::class, 'checkout'])->name('checkout');
 
-Route::get('/about', [App\Http\Controllers\LibraryController::class, 'about'])->name('about');
+Route::get('/checkout/{id}/book', [App\Http\Controllers\CheckoutController::class, 'store'])->name('store');
 
-Route::get('/contact', [App\Http\Controllers\LibraryController::class, 'contact'])->name('contact');
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'about'])->name('about');
 
-Route::get('/settings', [App\Http\Controllers\LibraryController::class, 'settings'])->name('settings');
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
+
+Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'settings'])->name('settings');
 
 
 

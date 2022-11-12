@@ -37,16 +37,22 @@ class CheckoutController extends Controller
         return view('checkout', array('user' => $user, 'book' => $book));
     }
 
-    public function store()
+    public function store($id)
     {
+        $userId = auth()->id();
+        $user= User::find($userId);
+        $selectedBook = Book::find($id);
+        $validatedData = $selectedBook->validate([
+            'name' => 'required|max:255',
+            'price' => 'required',
+        ]);
+        $checkoutBook = Book_checkout::create($validatedData);
 
-     return view('checkout');
-    }
-
+     return redirect('/home')->with('success', 'Book is successfully checked out');
    }
 
 
-
+}
   
 
   

@@ -1,5 +1,3 @@
-@extends('layouts.app')
-
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
