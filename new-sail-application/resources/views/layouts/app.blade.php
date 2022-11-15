@@ -41,7 +41,10 @@
      <a class="nav-link active" aria-current="page" href="/library">Library</a>
    </li>
    <li class="nav-item">
-     <a class="nav-link" href="/logout">Logout</a>
+   <form action="{{ route('logout') }}" method="post">
+       @csrf
+       <button class="nav-link active"  type="submit">Logout</button>
+</form>
    </li>
  
  </ul>

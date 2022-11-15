@@ -18,6 +18,7 @@
    <p><?php echo"{$book['book_status_enum']}"; ?></p>
    
   <button type="submit" class="btn btn-primary">Submit</button>
+  <a class="btn btn-primary" href="javascript:history.back(1)">Back</a>
 </form>
 </div>
 </div>
