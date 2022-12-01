@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Category;
 
+
+
 class Book extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -29,9 +31,24 @@ class Book extends Model
         'book_updated_on',
     ];
 
-    public function category() {
+    public function category($id) {
         return $this->belongsTo(Category::class);
     }
 
+
+    public function checkout() {
+      
+    $this->number_of_copies=$this->number_of_copies -1;
+        
+        if ($this->number_of_copies < 1){
+            $this->status = 'Unavailable';
+          
+        }else{
+            $this->status = 'Available';
+        };
+
+        $this->save();
+  
+    }
 
 }

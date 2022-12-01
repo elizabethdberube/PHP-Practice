@@ -37,19 +37,34 @@ class CheckoutController extends Controller
         return view('checkout', array('user' => $user, 'book' => $book));
     }
 
+        /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
     public function store($id)
     {
         $userId = auth()->id();
         $user= User::find($userId);
-        $selectedBook = Book::find($id);
-        $validatedData = $selectedBook->validate([
-            'name' => 'required|max:255',
-            'price' => 'required',
-        ]);
-        $checkoutBook = Book_checkout::create($validatedData);
+        
+        $selectedBook = Book::findOrFail($id);
+        $selectedBook = checkout();
 
-     return redirect('/home')->with('success', 'Book is successfully checked out');
+        $data = array( $user =>$request->input('user_id'),
+        $selectedBook =>$request->input('book_id'),
+        'checkout_date'=> now(),
+        'book_issue_status'=>$request->input('Issue'),
+     
+    );
+
+    Book_checkout::create($request->all());
+
+     return redirect()->route('library')->with('success', 'Book is successfully checked out');
    }
+
+
 
 
 }

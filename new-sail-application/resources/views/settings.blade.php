@@ -19,7 +19,7 @@
 </div>
 <div class="mx-4 mb-4">
 <label for="password" class="pb-2">Password:</label>
-    <input id="password" type="password" class="form-control" name="password" value="<?php echo ucwords($user['password']);?>" autofocus>
+    <input id="password" type="password" class="form-control" name="password" value="password" autofocus>
 </div>
 
 <button type="submit" class="btn btn-primary">Submit</button>

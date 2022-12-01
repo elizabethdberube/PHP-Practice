@@ -9,7 +9,7 @@
     <form method="POST" action="/checkout/{id}/book">
     @csrf
    
-  <h1>Checkout this book for <?php echo ucwords($user['name']);?>:</h1>
+  <h1>Checkout for <?php echo ucwords($user['name']);?>:</h1>
   <hr></hr>
   <h5>Book you are checking out:</h5>
    <p><?php echo"{$book['book_name']}"; ?></p>
