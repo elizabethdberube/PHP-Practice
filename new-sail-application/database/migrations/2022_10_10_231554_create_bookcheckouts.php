@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('book_checkouts', function (Blueprint $table) {
+        Schema::create('bookcheckouts', function (Blueprint $table) {
             $table->id();
             $table->date('checkout_date');
             $table->date('expected_return_date');
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('book_checkouts');
+        Schema::dropIfExists('bookcheckouts');
     }
 };

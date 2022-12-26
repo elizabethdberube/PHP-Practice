@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Bookcheckout;
 use App\Models\Category;
 use App\Models\Book;
 use App\Models\User;
+
 
 class CheckoutController extends Controller
 {
@@ -34,7 +36,7 @@ class CheckoutController extends Controller
 
         
 
-        return view('checkout', array('user' => $user, 'book' => $book));
+        return view('checkout', array('user' => $user, 'book' => $book, 'userId' => $userId));
     }
 
         /**
@@ -44,28 +46,27 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store($id)
+    public function store(Request $request, $id)
+    
     {
-        $userId = auth()->id();
-        $user= User::find($userId);
-        
         $selectedBook = Book::findOrFail($id);
-        $selectedBook = checkout();
+        $selectedBook->checkoutBook();
+        $idUser = auth()->id();
+        $storeUser= User::find($idUser);
+        
+       
 
-        $data = array( $user =>$request->input('user_id'),
-        $selectedBook =>$request->input('book_id'),
+        $data = array( 'id'=>$request->input('id'),
+        'book_id'=>$request->input('book_id'),
         'checkout_date'=> now(),
         'book_issue_status'=>$request->input('Issue'),
      
     );
 
-    Book_checkout::create($request->all());
+    Bookcheckout::create($request->all());
 
      return redirect()->route('library')->with('success', 'Book is successfully checked out');
    }
-
-
-
 
 }
   

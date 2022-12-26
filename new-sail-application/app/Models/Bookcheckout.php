@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\User;
 use App\Models\Book;
 
-class Book_Checkout extends Model
+class Bookcheckout extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,7 +19,11 @@ class Book_Checkout extends Model
      *
      * @var array<int, string>
      */
-    protected $Book_Checkout = [
+
+    protected $fillable = ['book_id', 'checkout_date', 'book_issue_status','book_fines','return_date'];
+
+
+    protected $Bookcheckout = [
         'id',
         'user_id',
         'book_id',
@@ -28,6 +32,8 @@ class Book_Checkout extends Model
         'book_fines',
         'book_issue_status',
     ];
+
+
 
     public function book() {
         return $this->belongsTo(Book::class);

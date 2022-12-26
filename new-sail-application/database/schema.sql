@@ -33,14 +33,14 @@ book_isbn TEXT NULL,
 book_no_of_copies INT NULL,
 book_status enum ('Available', 'Unavailable'),
 book_added_on DATE,
-book_updated_on DATE,
+updated_at DATE,
 FOREIGN KEY (category_id)
 REFERENCES categories(id)
 ON DELETE SET NULL
 );
 
-DROP TABLE IF EXISTS  book_checkouts;
-CREATE TABLE  book_checkouts (
+DROP TABLE IF EXISTS  bookcheckouts;
+CREATE TABLE  bookcheckouts (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NULL,
 book_id INT NULL,
@@ -49,6 +49,8 @@ expected_return_date DATE NULL,
 return_date DATE NULL,
 book_fines INT NULL,
 book_issue_status enum('Issue','Return','Not Return'),
+updated_at DATE,
+created_at DATE,
 FOREIGN KEY ( book_id)
 REFERENCES  books(id)
 ON DELETE SET NULL,

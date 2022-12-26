@@ -28,7 +28,7 @@ class Book extends Model
         'book_no_of_copies',
         'book_status',
         'book_added_on',
-        'book_updated_on',
+        'updated_at',
     ];
 
     public function category($id) {
@@ -36,15 +36,15 @@ class Book extends Model
     }
 
 
-    public function checkout() {
+    public function checkoutBook() {
       
-    $this->number_of_copies=$this->number_of_copies -1;
+    $this->book_no_of_copies=$this->book_no_of_copies -1;
         
-        if ($this->number_of_copies < 1){
-            $this->status = 'Unavailable';
+        if ($this->book_no_of_copies < 1){
+            $this->book_status = 'Unavailable';
           
         }else{
-            $this->status = 'Available';
+            $this->book_status = 'Available';
         };
 
         $this->save();
