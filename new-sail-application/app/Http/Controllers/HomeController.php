@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\User;
-use App\Models\Book_Checkout;
+use App\Models\Bookcheckout;
 
 class HomeController extends Controller
 {
@@ -26,13 +26,14 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-      // $categories = Category::get();
-      // $books = Book::get();
+   
       $id = auth()->id();
       $userId= User::find($id);
+      $userBooks= Bookcheckout::where('user_id', $userId['id'])->get('book_id');
+      $bookListItems= Book::find($userBooks);
 
 
-   //     return view('dashboard', array('categories' => $categories, 'books' => $books, 'book_checkouts' => $book_checkouts));
-   return view('dashboard', array('user' => $userId));
+  
+   return view('dashboard', array('user' => $userId, 'bookListItems'=> $bookListItems));
     }
 }

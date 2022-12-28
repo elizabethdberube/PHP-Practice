@@ -6,9 +6,22 @@
 </div>
 <div class="card text-center mx-4 mb-4 mt-4">
   <div class="card-header">
+
     Your account details:
+ 
   </div>
   <div class="card-body">
+  <table class="table">
+                      <thead>
+                        <th scope="col">Book Name</th>
+</thead>
+<tbody>
+  <?php foreach($bookListItems as $bookListItem) { ?>
+<tr>
+  <td><?php echo $bookListItem['book_name']; ?></td>
+  </tr>
+<?php
+  } ?>
 
   </div>
   <div class="card-footer text-muted">

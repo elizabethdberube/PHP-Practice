@@ -24,6 +24,7 @@ class Book extends Model
         'id',
         'category_id',
         'book_author',
+        'book_name',
         'book_isbn',
         'book_no_of_copies',
         'book_status',
@@ -34,7 +35,17 @@ class Book extends Model
     public function category($id) {
         return $this->belongsTo(Category::class);
     }
-
+    
+    // public function userDashboard($userId) {
+    //      $id = auth()->id();
+    //     $userId= User::find($id);
+         
+    //     $userBooks= Bookcheckout::get(['user_id' => $userId]);
+        
+        
+    //     return $bookListItems= Book::get($userBooks['book_id']);
+       
+    // }
 
     public function checkoutBook() {
       

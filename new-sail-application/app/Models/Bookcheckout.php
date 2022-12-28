@@ -20,7 +20,7 @@ class Bookcheckout extends Model
      * @var array<int, string>
      */
 
-    protected $fillable = ['book_id', 'checkout_date', 'book_issue_status','book_fines','return_date'];
+    protected $fillable = ['book_id', 'user_id', 'checkout_date', 'book_issue_status','book_fines','return_date'];
 
 
     protected $Bookcheckout = [
@@ -35,7 +35,7 @@ class Bookcheckout extends Model
 
 
 
-    public function book() {
+    public function Book() {
         return $this->belongsTo(Book::class);
     }
     public function User() {

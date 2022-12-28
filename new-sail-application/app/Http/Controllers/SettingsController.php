@@ -29,4 +29,25 @@ class SettingsController extends Controller
 
         return view('settings', array('user' => $user));
     }
+
+public function store(Request $request)
+    
+    {
+    
+        $idUser = auth()->id();
+        $storeUser= User::find($idUser);
+        
+       
+
+        $data = array( 'id'=>$request->input('id'),
+        'name'=>$request->input('name'),
+        'email'=>$request->input('email'),
+        'password'=>$request->input('password'),
+     
+    );
+
+    User::create($request->all());
+
+     return redirect()->route('settings')->with('success', 'Profile is successfully updated');
+   }
 }

@@ -6,7 +6,7 @@
   <h1>Update your info:</h1>
   </div>
   <div class="card-body">
-  <form method="POST" action="">
+  <form method="POST" action="/settings">
 
 
 <div class="mx-4 mb-4">
