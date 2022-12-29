@@ -7,27 +7,42 @@
 <div class="card text-center mx-4 mb-4 mt-4">
   <div class="card-header">
 
-    Your account details:
- 
+  Books you have currently checked out:
+
   </div>
   <div class="card-body">
-  <table class="table">
-                      <thead>
-                        <th scope="col">Book Name</th>
-</thead>
+
+
 <tbody>
+
+ 
+  <table class="table">
+  <thead>
+    <tr>
+    <th scope="col">Book Author</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">ISBN</th>
+    </tr>
+  </thead>
+  <tbody>
   <?php foreach($bookListItems as $bookListItem) { ?>
 <tr>
+<td><?php echo $bookListItem['book_author']; ?></td>
   <td><?php echo $bookListItem['book_name']; ?></td>
+  <td><?php echo $bookListItem['book_isbn']; ?></td>
+ 
   </tr>
 <?php
   } ?>
 
-  </div>
-  <div class="card-footer text-muted">
- 
-  </div>
+  </tbody>
+</table>
 </div>
+  <div class="card-footer text-muted">
+
+  </div>
+  </div>
+
 <div class="card text-center mx-4">
   <div class="card-header">
     Adjust your account settings:

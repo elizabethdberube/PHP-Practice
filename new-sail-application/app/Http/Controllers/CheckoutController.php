@@ -57,15 +57,16 @@ class CheckoutController extends Controller
        
 
         $data = array( 'id'=>$request->input('id'),
+        'user_id'=>$request->input('book_id'),
         'book_id'=>$request->input('book_id'),
         'checkout_date'=> now(),
-        'book_issue_status'=>$request->input('Issue'),
+        'book_issue_status'=>$request->input('book_issue_status'),
      
     );
 
     Bookcheckout::create($request->all());
 
-     return redirect()->route('library')->with('success', 'Book is successfully checked out');
+     return redirect()->route('dashboard')->with('success', 'Book is successfully checked out');
    }
 
 }
