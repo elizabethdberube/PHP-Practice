@@ -13,11 +13,13 @@
   <h1>Checkout for <?php echo ucwords($user['name']);?>:</h1>
   <hr></hr>
   <h5>Book you are checking out:</h5>
-  <input id="{{$book['id']}}" name="{{$book['id']}}" type="hidden" class="form-control" required="required">
-  <input id="{{$book['book_name']}}" name="{{$book['book_name']}}" type="hidden" class="form-control" required="required">  
-  <input id="{{$book['book_author']}}" name="{{$book['book_author']}}" type="hidden" class="form-control" required="required">
-  <input id="{{$book['book_isbn']}}" name="{{$book['book_isbn']}}" type="hidden" class="form-control" required="required">
-  <input id="{{$book['book_status_enum']}}" name="{{$book['book_status_enum']}}" type="hidden" class="form-control" required="required">
+  <input id="book_id" name="book_id" type="hidden" class="form-control" value="{{$book['id']}}" required="required">
+  <input id="user_id" name="user_id" type="hidden" class="form-control" value="{{$book['id']}}" required="required">
+  <input id="user_id" name="user_id" type="hidden" class="form-control" value="{{$user['id']}}" required="required">
+  <input id="book_name" name="book_name" type="hidden" class="form-control" value="{{$book['book_name']}}" required="required">    
+  <input id="book_author" name="book_author" type="hidden" class="form-control" value="{{$book['book_author']}}"  required="required">
+  <input id="book_isbn" name="book_isbn" type="hidden" class="form-control" value="{{$book['book_isbn']}}"  required="required">
+  <input id="book_status_enum" name="book_status_enum" type="hidden" class="form-control" rvalue="{{$book['book_status_enum']}}"  equired="required">
   <p><?php echo"{$book['id']}"; ?></p>
   <p><?php echo"{$book['book_name']}"; ?></p>
    <p><?php echo"{$book['book_author']}"; ?></p>

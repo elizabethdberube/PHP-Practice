@@ -57,9 +57,9 @@ class CheckoutController extends Controller
        
 
         $data = array( 'id'=>$request->input('id'),
-        'user_id'=>$request->input('book_id'),
+        'user_id'=>$request->input('user_id'),
         'book_id'=>$request->input('book_id'),
-        'checkout_date'=> now(),
+        'checkout_date'=>now(),
         'book_issue_status'=>$request->input('book_issue_status'),
      
     );
