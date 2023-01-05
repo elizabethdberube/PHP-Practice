@@ -6,23 +6,75 @@
   <h1>Update your info:</h1>
   </div>
   <div class="card-body">
-  <form method="POST" action="/settings">
-
+  <form method="POST" action="/settings/updateName">
+  @csrf
 
 <div class="mx-4 mb-4">
-<label for="name" class="pb-2">Name:</label>
-    <input id="name" type="name" class="form-control" name="name" value="<?php echo ucwords($user['name']);?>" autofocus>
-</div>
-<div class="mx-4 mb-4">
-<label for="email" class="pb-2">Email:</label>
-    <input id="email" type="email" class="form-control" name="email" value="<?php echo ucwords($user['email']);?>" autofocus>
-</div>
-<div class="mx-4 mb-4">
-<label for="password" class="pb-2">Password:</label>
-    <input id="password" type="password" class="form-control" name="password" value="password" autofocus>
-</div>
+<label for="nameInput" class="pb-2">Name:</label>
 
-<button type="submit" class="btn btn-primary">Submit</button>
+    <input id="nameInput" type="text" class="form-control" name="userName" value="<?php echo ucwords($user['name']);?>" autofocus>
+
+</div>
+@if (session('statusOne'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('statusOne') }}
+                                </div>
+                            @endif
+
+<button type="submit" class="btn btn-primary mb-2">Update Name</button>
+</form>
+
+<form method="POST" action="/settings/updateEmail">
+  @csrf
+<div class="mx-4 mb-4">
+<label for="emailInput" class="pb-2">Email:</label>
+    <input id="emailInput" type="email" class="form-control" name="userEmail" value="<?php echo ucwords($user['email']);?>" autofocus>
+   
+</div>
+@if (session('statusTwo'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('statusTwo') }}
+                                </div>
+                            @endif
+<button type="submit" class="btn btn-primary mb-2">Update Email</button>
+</form>
+<form method="POST" action="/settings/updatePassword">
+  @csrf
+
+                       
+
+                            <div class="mx-4 mb-4">
+                                <label for="oldPasswordInput" class="form-label">Old Password</label>
+                                <input name="old_password" type="password" class="form-control @error('old_password') is-invalid @enderror" id="oldPasswordInput"
+                                    placeholder="Old Password">
+                                @error('old_password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mx-4 mb-4">
+                                <label for="newPasswordInput" class="form-label">New Password</label>
+                                <input name="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" id="newPasswordInput"
+                                    placeholder="New Password">
+                                @error('new_password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mx-4 mb-4">
+                                <label for="confirmNewPasswordInput" class="form-label">Confirm New Password</label>
+                                <input name="new_password_confirmation" type="password" class="form-control" id="confirmNewPasswordInput"
+                                    placeholder="Confirm New Password">
+                            </div>
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @elseif (session('error'))
+                                <div class="alert alert-danger" role="alert">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+                     
+<button type="submit" class="btn btn-primary mb-2">Update Password</button>
 
 </form>
   </div>

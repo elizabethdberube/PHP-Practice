@@ -46,7 +46,10 @@ Route::get('/about', [App\Http\Controllers\AboutController::class, 'about'])->na
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
 
 Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'settings'])->name('settings');
-Route::post('/settings', [App\Http\Controllers\SettingsController::class, 'store'])->name('store');
+
+Route::post('/settings/updateName', [App\Http\Controllers\SettingsController::class, 'updateName'])->name('updateName');
+Route::post('/settings/updateEmail', [App\Http\Controllers\SettingsController::class, 'updateEmail'])->name('updateEmail');
+Route::post('/settings/updatePassword', [App\Http\Controllers\SettingsController::class, 'updatePassword'])->name('updatePassword');
 
 
 

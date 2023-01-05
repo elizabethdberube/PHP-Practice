@@ -50,15 +50,15 @@
   <div class="card-body">
   <div class="mt-3">
   <h5 class="card-title">Name:</h3>
-    <p class="card-text"><?php echo ucwords($user['name']);?> </p> <a href="/settings" class="btn btn-primary pl-10">Update Name</a>
+    <p class="card-text"><?php echo ucwords($user['name']);?> </p> 
 </div>
 <div class="mt-3">
   <h5 class="card-title">Email:</h3>
-    <p class="card-text"><?php echo ucwords($user['email']);?> </p> <a href="/settings" class="btn btn-primary pl-10">Update Email</a> 
+    <p class="card-text"><?php echo ucwords($user['email']);?> </p> 
 </div>
 <div class="mt-3 mb-4">  
-  <h5 class="card-title">Password:</h3>
-    <p class="card-text"></p> <a href="/settings" class="btn btn-primary pl-5">Update Password</a>
+
+    <a href="/settings" class="btn btn-primary pl-5">Update Account Information</a>
 </div>
   </div>
   <div class="card-footer text-muted">

@@ -3,9 +3,9 @@ DELETE FROM books;
 DELETE FROM categories;
 DELETE FROM users;
 
-INSERT INTO users (id, name, email, password)
-VALUES (1, "liz", "fakeuser@gmail.com", "$2y$10$IPZL4D1tBjbe3lyio4dULe4E3IOnlMlEbcCNdm.UEWabPnGD8IiDe"),
-      (2, "elizabeth", "admin@librarystop.com", "$2y$10$IPZL4D1tBjbe3lyio4dULe4E3IOnlMlEbcCNdm.UEWabPnGD8IiDe");
+INSERT INTO users (id, name, email, password, updated_at,created_at)
+VALUES (1, "liz", "fakeuser@gmail.com", "$2y$10$IPZL4D1tBjbe3lyio4dULe4E3IOnlMlEbcCNdm.UEWabPnGD8IiDe","2022-09-22", "2022-09-23" ),
+      (2, "elizabeth", "admin@librarystop.com", "$2y$10$IPZL4D1tBjbe3lyio4dULe4E3IOnlMlEbcCNdm.UEWabPnGD8IiDe","2022-09-22", "2022-09-23" );
 
 INSERT INTO categories (id, category_name, category_status, category_created_on, category_updated_on)
 VALUES (1, "Programming", "Enable",  "2022-09-22", "2022-09-23"),

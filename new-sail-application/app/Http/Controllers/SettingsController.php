@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class SettingsController extends Controller
@@ -30,24 +31,80 @@ class SettingsController extends Controller
         return view('settings', array('user' => $user));
     }
 
-public function store(Request $request)
+// public function store(Request $request)
     
-    {
+//     {
     
-        $idUser = auth()->id();
-        $storeUser= User::find($idUser);
+//         $idUser = auth()->id();
+//         $storeUser= User::find($idUser);
         
        
 
-        $data = array( 'id'=>$request->input('id'),
-        'name'=>$request->input('name'),
-        'email'=>$request->input('email'),
-        'password'=>$request->input('password'),
+//         $data = array( 'id'=>$request->input('id'),
+//         'name'=>$request->input('name'),
+//         'email'=>$request->input('email'),
+//         'password'=>$request->input('password'),
      
-    );
+//     );
 
-    User::create($request->all());
+//     User::create($request->all());
 
-     return redirect()->route('settings')->with('success', 'Profile is successfully updated');
-   }
+//      return redirect()->route('settings')->with('success', 'Profile is successfully updated');
+//    }
+
+public function updateName(Request $request)
+{
+        # Validation
+        $request->validate([
+            'userName' => 'required',
+            
+        ]);
+
+
+        #Update the new email
+        User::whereId(auth()->user()->id)->update([
+            'name' => $request->input('userName')
+        ]);
+
+        return back()->with("statusOne", "Name changed successfully!");
+}
+public function updateEmail(Request $request)
+{
+        # Validation
+        $request->validate([
+            'userEmail' => 'required',
+            
+        ]);
+
+
+        #Update the new email
+        User::whereId(auth()->user()->id)->update([
+            'email' => $request->input('userEmail')
+        ]);
+
+        return back()->with("statusTwo", "Email changed successfully!");
+}
+
+   public function updatePassword(Request $request)
+{
+        # Validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+
+
+        #Match The Old Password
+        if(!Hash::check($request->old_password, auth()->user()->password)){
+            return back()->with("error", "Old Password Doesn't match!");
+        }
+
+
+        #Update the new Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return back()->with("status", "Password changed successfully!");
+}
 }

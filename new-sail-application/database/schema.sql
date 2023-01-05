@@ -9,7 +9,9 @@ CREATE TABLE users (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name TEXT NULL,
 email TEXT NULL,
-password TEXT NULL
+password TEXT NULL,
+updated_at DATE,
+created_at DATE
 
 );
 
