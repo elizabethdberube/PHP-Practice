@@ -39,6 +39,7 @@
    <li class="nav-item">
      <a class="nav-link active" aria-current="page" href="/library">Library</a>
    </li>
+
    <li class="nav-item">
    <form action="{{ route('logout') }}" method="post">
        @csrf
@@ -46,13 +47,22 @@
 </form>
    </li>
  
+   @endauth
+        
+        @endif
+      @auth
+          @role('admin')
+          <li><a href="{{ route('users.index') }}" class="nav-link ">Users</a></li>
+          <li><a href="{{ route('roles.index') }}" class="nav-link ">Roles</a></li>
+          <li><a href="{{ route('permissions.index') }}" class="nav-link ">Permissions</a></li>
+          @endrole
+       
+        @endauth
  </ul>
 </div>
 </div>
 </nav>
-               @endauth
-        
-       @endif
+           
         <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">

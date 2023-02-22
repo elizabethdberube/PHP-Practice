@@ -22,24 +22,33 @@
     <th scope="col">Book Author</th>
       <th scope="col">Book Name</th>
       <th scope="col">ISBN</th>
+      <th scope="col">Return</th>
     </tr>
   </thead>
   <tbody>
+  <form method="POST" action="/settings/updatePassword">
+  @csrf
   <?php foreach($bookListItems as $bookListItem) { ?>
 <tr>
-<td><?php echo $bookListItem['book_author']; ?></td>
+<td><?php echo $bookListItem['book_author']; ?><input name="returnBook" type="hidden" class="form-control" value="<?php echo $bookListItem['id']; ?>" id="returnBookInput"></td>
   <td><?php echo $bookListItem['book_name']; ?></td>
-  <td><?php echo $bookListItem['book_isbn']; ?></td>
- 
+  <td><?php echo $bookListItem['book_isbn']; ?> </td>
+  <td><button type="submit" class="btn btn-primary mb-2">Return Book</button>
+</td>
   </tr>
 <?php
   } ?>
-
+</form>
   </tbody>
 </table>
 </div>
   <div class="card-footer text-muted">
-
+  @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                        
+                            @endif
   </div>
   </div>
 

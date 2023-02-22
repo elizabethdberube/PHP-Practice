@@ -5,6 +5,8 @@
 ` composer require laravel/sail --dev `
 
 ` php artisan sail:install `
+` sail  artisan db:seed --class=CreateAdminUserSeeder `
+
 
 #### add alias to .bashrc file
 ` alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail' `
@@ -54,4 +56,8 @@ then run again
  password:
  password
 
+admin"
+
+passsword:
+P0t4?6wen
 

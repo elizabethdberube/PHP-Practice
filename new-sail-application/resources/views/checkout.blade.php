@@ -17,9 +17,10 @@
   <input id="user_id" name="user_id" type="hidden" class="form-control" value="{{$book['id']}}" required="required">
   <input id="user_id" name="user_id" type="hidden" class="form-control" value="{{$user['id']}}" required="required">
   <input id="book_name" name="book_name" type="hidden" class="form-control" value="{{$book['book_name']}}" required="required">    
-  <input id="book_author" name="book_author" type="hidden" class="form-control" value="{{$book['book_author']}}"  required="required">
-  <input id="book_isbn" name="book_isbn" type="hidden" class="form-control" value="{{$book['book_isbn']}}"  required="required">
-  <input id="book_status_enum" name="book_status_enum" type="hidden" class="form-control" rvalue="{{$book['book_status_enum']}}"  equired="required">
+  <input id="book_author" name="book_author" type="hidden" class="form-control" value="{{$book['book_author']}}" >
+  <input id="book_isbn" name="book_isbn" type="hidden" class="form-control" value="{{$book['book_isbn']}}"  >
+  <input id="book_issue_status" name="book_issue_status" type="hidden" class="form-control" value="Issue" >
+ 
   <p><?php echo"{$book['id']}"; ?></p>
   <p><?php echo"{$book['book_name']}"; ?></p>
    <p><?php echo"{$book['book_author']}"; ?></p>

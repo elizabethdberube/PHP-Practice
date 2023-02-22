@@ -41,15 +41,7 @@ class LibraryController extends Controller
        return view("library", array( 'books' => $books));
  
    }
-  //  public function selectBook($id)
-  //  {
 
-  //   $user = User::get($id);
-  //   $books = Book::get($id);
-
-  //      return view('categories', array('category' => $category, ));
-    
-  //  }
 
 
   }

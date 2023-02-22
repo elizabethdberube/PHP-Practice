@@ -58,8 +58,33 @@ class Book extends Model
             $this->book_status = 'Available';
         };
 
-        $this->save();
+        // $this->checkout_date=$this->checkout_date +30;
+        // $this->save();
   
     }
+
+    public function addBook() {
+      
+        $this->book_no_of_copies=$this->book_no_of_copies +1;
+            
+            if ($this->book_no_of_copies < 1){
+                $this->book_status = 'Unavailable';
+              
+            }else{
+                $this->book_status = 'Available';
+            };
+    
+            $this->save();
+      
+        }
+
+        public function returnBook() {
+      
+            $this->book_issue_status= 'return';
+                
+    
+                $this->save();
+          
+            }
 
 }
