@@ -33,6 +33,17 @@
                         <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                     @endif
                 </div>
+                <div class="mb-3">
+                    <label for="new_password" class="form-label">Password</label>
+                    <input value="{{ old('password') }}" id="new_password"
+                        type="password" 
+                        class="form-control" 
+                        name="new_password" 
+                        placeholder="Password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    @if ($errors->has('password'))
+                        <span class="text-danger text-left">{{ $errors->first('password') }}</span>
+                    @endif
+                </div>
         
 
                 <button type="submit" class="btn btn-primary">Save user</button>

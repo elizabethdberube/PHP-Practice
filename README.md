@@ -56,8 +56,8 @@ then run again
  password:
  password
 
-admin"
-
+admin:
+admin@gmail.com
 passsword:
 P0t4?6wen
 

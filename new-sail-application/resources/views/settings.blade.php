@@ -62,7 +62,7 @@
                             <div class="mx-4 mb-4">
                                 <label for="confirmNewPasswordInput" class="form-label">Confirm New Password</label>
                                 <input name="new_password_confirmation" type="password" class="form-control" id="confirmNewPasswordInput"
-                                    placeholder="Confirm New Password">
+                                    placeholder="Confirm New Password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                             </div>
                             @if (session('status'))
                                 <div class="alert alert-success" role="alert">
